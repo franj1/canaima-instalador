@@ -10,9 +10,11 @@ class Main():
         commands.getstatusoutput('umount /mnt'.format(particion))
         commands.getstatusoutput('mount {0} /mnt'.format(particion))
         cmd = 'df --sync {0}'.format(particion)
+        print cmd
         a, b = commands.getstatusoutput(
             cmd+" | grep '/' | awk '{print $3,$4}'"
             )[1].split()
+        print a,b
         commands.getstatusoutput('umount {0}'.format(particion))
         return a+'kB', b+'kB'
 
