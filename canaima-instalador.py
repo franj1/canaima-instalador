@@ -39,7 +39,8 @@ class Bienvenida():
         m = WIZ.mostrar('Bienvenida')
         c = aconnect(WIZ.siguiente, self.siguiente, CFG['next'], CFG)
         s = WIZ.anterior.set_sensitive(False)
-
+        
+		
     def siguiente(self, CFG):
         '''
             Función para el evento del botón siguiente
@@ -59,7 +60,7 @@ class Teclado():
         c = aconnect(WIZ.siguiente, self.siguiente, CFG['next'], CFG)
         c = aconnect(WIZ.anterior, self.anterior, CFG['prev'], CFG)
         s = WIZ.anterior.set_sensitive(True)
-
+   
     def siguiente(self, CFG):
         '''
             Función para el evento del botón siguiente

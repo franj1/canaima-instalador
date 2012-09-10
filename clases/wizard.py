@@ -64,8 +64,7 @@ class Wizard(gtk.Window):
 		self.set_size_request(ancho, alto)
 		self.set_resizable(0)
 		self.set_border_width(0)
-		self.connect("destroy", self.on_destroy)
-
+		self.connect("delete-event", self.close)
 		# Creo el contenedor principal
 		self.add(self.__c_principal)
 
@@ -139,7 +138,7 @@ class Wizard(gtk.Window):
 		'''
 		self.lbl_info.set_text(info)
 
-	def close(self, widget=None):
+	def close(self, widget=None, event=None):
 		'''
 			Cierra la ventana
 		'''
@@ -159,8 +158,8 @@ class Wizard(gtk.Window):
 		
 		gtk.main_quit()
 		
-	def on_destroy (self, widget):
-		 gtk.main_quit()
+	#def on_destroy (self, widget): seguramente al momento de instalar sera necesario
+	#	gtk.main_quit()
 	
 	def agregar(self, nombre, paso):
 		'''
